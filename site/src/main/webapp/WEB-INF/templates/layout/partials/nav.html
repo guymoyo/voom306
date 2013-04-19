@@ -1,0 +1,25 @@
+<nav>	
+	<div th:remove="all">
+		<!--
+		     This template displays the navigation of the site by looking up the category named "Nav"
+		     and building a list of the categories sub-categories. 	         	      	    
+		-->
+	</div>
+	<blc:categories resultVar="navCategories" parentCategory="Nav" maxResults="6" />
+	
+	<ul>
+		<li th:each="category : ${navCategories}">
+			<a class="home" th:href="@{${category.url}}" th:class="${categoryStat.first}? 'home'" th:text="${category.name}"></a>
+		</li>
+		<li>
+			<a class="social" style="margin-left: 200px;margin-right: -60px;" target="_blank" rel="nofollow" href="http://www.facebook.com/voom360!">
+				<img th:src="@{/img/FaceBook_32x32.png}" alt="facebook" />
+			</a>
+		</li>
+		<li>
+			<a class="social" target="_blank" rel="nofollow" href="http://www.twitter.com/voom360!">
+				<img th:src="@{/img/Twitter_32x32.png}" alt="twitter" />
+			</a>
+		</li>
+	</ul>
+</nav>

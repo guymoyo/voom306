@@ -1,0 +1,16 @@
+<nav id="navproduct">	
+	<div th:remove="all">
+		<!--
+		     This template displays the navigation of the site by looking up the category named "Nav"
+		     and building a list of the categories sub-categories. 	         	      	    
+		-->
+	</div>
+	<blc:categories resultVar="navCategories" parentCategory="Nav Product" maxResults="6" />
+	
+	<ul class="">
+		<li th:each="category : ${navCategories}">
+			<a class="" th:href="@{${category.url}}" th:class="${categoryStat.first}? 'home'" th:text="${category.name}"></a>
+		</li>
+		
+	</ul>
+</nav>
