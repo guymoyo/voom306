@@ -1,9 +1,25 @@
-## The New Broadleaf Commerce Demo Site
 
-This Maven project is meant to be used as a solid started project for any [Broadleaf Commerce](http://www.broadleafcommerce.org) application. It has many sensible defaults set up along with examples of how a fully functioning eCommerce site based on Broadleaf might work.
+=======
+voom306
+=======
 
-One typical way of using this project would be to follow the [Getting Started Guide](http://docs.broadleafcommerce.org/current/Getting-Started.html), which would walk you through using our pre-bundled Eclipse workspace.
+ecommerce project
 
-However, if you would like to utilize your own workspace or IDE configuration, you may prefer to fork this project. This would give you the added benefit of being able to pull in upstream changes as we work to improve the DemoSite.
+  first of all :
+  
+  cd DemoSite
+  
+  mvn clean install 
+  
+  if you have some hibernate jar invalid try download manualy or change repository
+  (hibernate from bbroadleaf repository seems invalid)
+  
+to launch:
 
-> Note: If you are going to fork this project, we recommend basing your work on the `master` branch, and not the develop branch. develop is our ongoing development branch and there are no guarantees of stability on it.
+       1) enter in site folder and do "ant jetty-demo" or "tomcat-demo" , it will target the task 
+          jetty-demo in build.xml that execute mvn goal and start db
+          look at "localhost:8080" for jetty and "localhost:8080/site" for tomcat
+      
+       2) after launch site project, enter in admin folder and do "ant jetty-demo"
+          look at: "http://localhost:8081/admin" or "https://localhost:8444"
+
